@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main(void){
+    int count=0;
+    bool word=false;
+    string temp;
+    while(getline(cin,temp)){
+    	count =0;
+    	word = false;
+    	for(auto i :temp){
+    		if(isalpha(i) && !word){
+	    		count++;
+	    		word = true;
+	    	}
+	    	if(!isalpha(i)){
+	    		word = false;
+	    	}
+    	}
+    	cout << count << endl;
+    }
+    return 0;
+}
+
+ 
