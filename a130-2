@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	int a,ans;
+	cin >> a;
+	int count=1;
+	string set1[10];
+        int set2[10];
+	while(count<=a){
+		string t;
+		int p;
+		int max=0;
+		for(int i=0;i<10;i++){
+			cin >> t >> p;
+			set1[i]=t;
+                        set2[i]=p;
+			if(p>max){
+				max=p;
+			}
+		}
+		cout << "Case #" << count << ":"<<endl;
+		for(int i=0;i<10;i++){
+			if(max==set2[i]){
+				cout << set1[i]<<endl;
+			}
+		}
+		count++;
+	}
+    return 0;
+}
+
+ 	
+
+ 
+ 	
+
+ 
