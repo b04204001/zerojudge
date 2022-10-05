@@ -8,28 +8,35 @@ int main(void){
 	while(cin >>s){
 		string t;
 		t = s[0];
-		for(int i=0;i<s.length();i++){
+		int j=1;
+		for(int i=1;i<s.length();i++){
 			if(s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U' || s[i] == 'Y' || s[i] == 'W' || s[i] == 'H'){
 				continue;
 			}
 			else{
-				if(s[i] == 'B' || s[i] == 'P' || s[i] == 'F' || s[i] == 'V'){ //B, P, F, V
+				if(s[i] == 'B' || s[i] == 'P' || s[i] == 'F' || s[i] == 'V' || t[j] != '1'){ //B, P, F, V
 					t += '1';
+					j++;
 				}
-				else if(s[i] == 'C' || s[i] == 'S' || s[i] == 'K' || s[i] == 'G' || s[i] == 'J' || s[i] == 'Q' || s[i] == 'X' || s[i] == 'Z'){ //C, S, K, G, J, Q, X, Z
+				else if(s[i] == 'C' || s[i] == 'S' || s[i] == 'K' || s[i] == 'G' || s[i] == 'J' || s[i] == 'Q' || s[i] == 'X' || s[i] == 'Z' || t[j] != '2'){ //C, S, K, G, J, Q, X, Z
 					t+= '2';
+					j++;
 				}
-				else if(s[i] == 'D' || s[i] == 'T'){ //D, T
+				else if(s[i] == 'D' || s[i] == 'T' || t[j] != '3'){ //D, T
 					t+= '3';
+					j++;
 				}
-				else if(s[i] == 'L'){
+				else if(s[i] == 'L' || t[j] != '4'){
 					t+='4';
+					j++;
 				}
-				else if(s[i] == 'M' || s[i] == 'N'){
+				else if(s[i] == 'M' || s[i] == 'N' || t[j] != '5'){
 					t+='5';
+					j++;
 				}
-				else if(s[i] == 'R' ){
+				else if(s[i] == 'R' || t[j] != '6'){
 					t+='6';
+					j++;
 				}
 			}
 		}
