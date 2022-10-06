@@ -1,0 +1,45 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int trans(int P){
+	int t=0;
+	int count =0;
+	while(P>0){
+		t += pow(10,count)*(P%2);
+		P /= 2;
+		count++;
+	}
+	return t;
+}
+
+int solve(int b){
+	int count=0;
+	while(b>0){
+		if(b%10==1) count++;
+		b /=10;
+	}
+	return count;
+}
+int main(void){
+	int P;
+	while( cin >> P){
+		if( P ==0){
+			return 0;
+		}
+		int B;
+		int ans;
+		B= trans(P);
+		ans = solve(B);
+		cout << "The parity of "<<B<< " is " << ans <<" (mod 2)." <<endl; //The parity of B is P (mod 2)
+	}
+	
+    return 0;
+}
+
+ 	
+
+ 
+ 	
+
+ 
